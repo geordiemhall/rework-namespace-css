@@ -1,23 +1,23 @@
 {
-	"name": "rework-namespace-css",
-	"version": "0.1.1",
-	"description": "Plugin for rework that namespaces CSS with selectors and class prefixes.",
-	"dependencies": {
-		"rework-walk": "~1.0.0"
-	},
-	"keywords": [
-		"css",
-		"rework",
-		"namespace"
-	],
-	"author": "@geordiemhall",
-	"license": "MIT",
-	"bugs": {
-		"url": "https://github.com/geordiemhall/rework-namespace-css/issues"
-	},
-	"homepage": "https://github.com/geordiemhall/rework-namespace-css",
-	"repository": {
-		"type": "git",
-		"url": "git://github.com/geordiemhall/rework-namespace.git"
-	}
+  "name": "rework-namespace-css",
+  "version": "0.1.2",
+  "description": "Plugin for rework that namespaces CSS with selectors and class prefixes.",
+  "dependencies": {
+    "rework-walk": "~1.0.0"
+  },
+  "keywords": [
+    "css",
+    "rework",
+    "namespace"
+  ],
+  "author": "@geordiemhall",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/geordiemhall/rework-namespace-css/issues"
+  },
+  "homepage": "https://github.com/geordiemhall/rework-namespace-css",
+  "repository": {
+    "type": "git",
+    "url": "git://github.com/geordiemhall/rework-namespace.git"
+  }
 }
