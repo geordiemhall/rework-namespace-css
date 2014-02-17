@@ -1,0 +1,15 @@
+html {
+    background: red;
+}    
+
+body {
+    color: blue;
+}
+
+.button {
+    border: 1px solid black;
+}
+
+a.button {
+    border-color: red;
+}

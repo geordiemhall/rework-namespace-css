@@ -1,0 +1,15 @@
+.html.gmh {
+  background: red;
+}
+
+.gmh .body {
+  color: blue;
+}
+
+.gmh .gmh-button {
+  border: 1px solid black;
+}
+
+.gmh a.gmh-button {
+  border-color: red;
+}
