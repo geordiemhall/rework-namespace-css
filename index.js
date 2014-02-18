@@ -44,9 +44,9 @@ module.exports = function prefix(options) {
 
 			if (opts.selector){
 
-				var root = 'html' || opts.root
+				var root = opts.root || 'html'
 
-				// TODO: This method would only replace the first instance of root, 
+				// TODO: This method would only replace the first instance of root,
 				// so there is a rare bug when there are two classes that both contain root.
 				// eg. if root is 'html' and an element has the class .html5.html
 
