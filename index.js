@@ -8,6 +8,7 @@
 // 		selector: all selectors will have this string prepended to them (except html) 
 // 		namespaceHtml: should html have prefix appended to it directly? or with a space (eg. descendant)?
 // 		namespaceBody: should body selectors also have a non-body prefixed version 
+// 		root: the element to treat as the highest level. Defaults to html
 
 // TODO @geordiemhall: Implement keyframes option 
 
@@ -17,6 +18,8 @@ var walk = require('rework-walk');
 module.exports = function prefix(options) {
 
 	var opts = options || {}
+	var regBody = /(?:\s+|^)body(?:\s+|$|\.|\:){1}/
+	var regHtml = /(?:\s+|^)html(?:\s+|$|\.|\:){1}/
 
 	return function prefix(style) {
 		
@@ -27,7 +30,7 @@ module.exports = function prefix(options) {
 			if (opts.namespaceBody !== false){
 
 				// Replace body with .body
-				sel = sel.replace(/(?:\s+|^)body(?:\s+|$|\.|\:){1}/, function(s){ 
+				sel = sel.replace(regBody, function(s){ 
 					return s.replace('body', '.body')
 				})
 
@@ -36,7 +39,7 @@ module.exports = function prefix(options) {
 			if (opts.namespaceHtml !== false){
 
 				// Replace html with .html
-				sel = sel.replace(/(?:\s+|^)html(?:\s+|$|\.|\:){1}/, function(s){ 
+				sel = sel.replace(regHtml, function(s){ 
 					return s.replace('html', '.html')
 				})
 
@@ -75,8 +78,6 @@ module.exports = function prefix(options) {
 			// Don't touch keyframes or font-face
 			if (!rule.selectors || rule.selectors.toString().indexOf('@') >= 0) 
 				return rule;
-
-			// console.log('walking style!', rule.selectors.toString())
 
 			rule.selectors = rule.selectors.map(function(selector) {
 				return prefixSelector(prefixClasses(selector))
