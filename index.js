@@ -71,7 +71,7 @@ module.exports = function prefix(options) {
       //don't prefix classes which we have chosen to ignore
       var prefixed = selector.split('.').map( function(cls, index) {
 
-        if(index == 0) { return cls; }
+        if(index === 0) { return cls; }
 
         if(opts.not && opts.not.some(function(n) { return cls.match(n); })) {
           return cls;
