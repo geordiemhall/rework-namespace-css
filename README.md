@@ -16,6 +16,8 @@ Pass in an options object to configure the plugin. Possible options:
 
 `root`: what selector to use as the root of the namespace. Defaults to `html`.
 
+`not`: array of selectors to not apply the prefix class to
+
 `namespaceHtml`: whether `html` should be converted to `.html`. Useful if complete namespacing is required. Defaults to `true`.
 
 `namespaceBody`: whether `body` should be converted to `.body`. Useful if complete namespacing is required. Defaults to `true`
@@ -31,7 +33,11 @@ The following gulp snippet
     ...
     
     return gulp.src('src/styles/index.css')
-        .pipe(rework(rework.namespace({ selector: '.gmh', class: 'gmh-' })))
+        .pipe(rework(rework.namespace({
+          selector: '.gmh',
+          not: [/^ng-/],
+          class: 'gmh-'
+        })))
         .pipe(gulp.dest('dist/styles'))
 
 Will turn

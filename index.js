@@ -66,11 +66,23 @@ module.exports = function prefix(options) {
 
 		}
 
-		function prefixClasses(selector){
+    function prefixClasses(selector){
 
-			return selector.split('.').join('.'+(opts.class || ''))
+      //don't prefix classes which we have chosen to ignore
+      var prefixed = selector.split('.').map( function(cls, index) {
 
-		}
+        if(index == 0) { return cls; }
+
+        if(opts.not && opts.not.some(function(n) { return cls.match(n); })) {
+          return cls;
+        }
+
+        return (opts.class || '') + cls;
+      });
+
+      return prefixed.join('.');
+    }
+
 
 		// Walk all styles
 		walk(style, function(rule, node) {
