@@ -25,28 +25,30 @@ module.exports = function prefix(options) {
 	var regBody = /(?:\s+|^)body(?:\s+|$|\.|\:){1}/
 	var regHtml = /(?:\s+|^)html(?:\s+|$|\.|\:){1}/
 
+	if(opts.ignore && typeof opts.ignore != 'object'){
+		opts.ignore = [opts.ignore]
+	}
+
 	return function prefix(style) {
-		
+
 		function prefixSelector(selector){
 
 			var sel = selector
 
-			if (opts.namespaceBody !== false){
 
+
+			if (opts.namespaceBody !== false){
 				// Replace body with .body
 				sel = sel.replace(regBody, function(s){
 					return s.replace('body', '.body')
 				})
-
 			}
 
 			if (opts.namespaceHtml !== false){
-
 				// Replace html with .html
-				sel = sel.replace(regHtml, function(s){ 
+				sel = sel.replace(regHtml, function(s){
 					return s.replace('html', '.html')
 				})
-
 			}
 
 			if (opts.selector){
@@ -85,9 +87,7 @@ module.exports = function prefix(options) {
 		}
 
 		function prefixClasses(selector){
-
 			return selector.split('.').join('.'+(opts.class || ''))
-
 		}
 
 		function getRootFromSelector(_sel,_roots){
@@ -102,11 +102,28 @@ module.exports = function prefix(options) {
 		// Walk all styles
 		walk(style, function(rule, node) {
 
+			function ifSelInArray(sel,arr){
+				if(sel && arr && arr.length){
+					for(var j in arr){
+						if( arr[j] === sel ){
+							return true;
+						}
+					}
+				}
+				return false
+			}
+
 			// Don't touch keyframes or font-face
-			if (!rule.selectors || rule.selectors.toString().indexOf('@') >= 0) 
+			if (!rule.selectors || rule.selectors.toString().indexOf('@') >= 0 )
 				return rule;
 
 			rule.selectors = rule.selectors.map(function(selector) {
+
+				// skip ignored selectors
+				if( ifSelInArray(selector, opts.ignore||[] ) ){
+					return selector;
+				}
+
 				return prefixSelector(prefixClasses(selector))
 			});
 

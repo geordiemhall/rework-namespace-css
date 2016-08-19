@@ -18,8 +18,9 @@ Pass in an options object to configure the plugin. Possible options:
 
 `namespaceHtml`: whether `html` should be converted to `.html`. Useful if complete namespacing is required. Defaults to `true`.
 
-`namespaceBody`: whether `body` should be converted to `.body`. Useful if complete namespacing is required. Defaults to `true`
+`namespaceBody`: whether `body` should be converted to `.body`. Useful if complete namespacing is required. Defaults to `true`.
 
+`ignore`: a list of selectors to ignore. Examle: ['body', 'html']. Default: null.
 
 ## Example
 

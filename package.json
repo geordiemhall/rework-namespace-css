@@ -1,6 +1,6 @@
 {
-  "name": "rework-namespace-css",
-  "version": "0.1.3",
+  "name": "rework-namespace-css-multiple",
+  "version": "0.2.0",
   "description": "Plugin for rework that namespaces CSS with selectors and class prefixes.",
   "dependencies": {
     "rework-walk": "~1.0.0"
@@ -10,14 +10,14 @@
     "rework",
     "namespace"
   ],
-  "author": "@geordiemhall",
+  "author": "@pvoznyuk",
   "license": "MIT",
   "bugs": {
-    "url": "https://github.com/geordiemhall/rework-namespace-css/issues"
+    "url": "https://github.com/pvoznyuk/rework-namespace-css-multiple/issues"
   },
-  "homepage": "https://github.com/geordiemhall/rework-namespace-css",
+  "homepage": "https://github.com/pvoznyuk/rework-namespace-css-multiple",
   "repository": {
     "type": "git",
-    "url": "git://github.com/geordiemhall/rework-namespace-css.git"
+    "url": "git://github.com/pvoznyuk/rework-namespace-css-multiple.git"
   }
 }
