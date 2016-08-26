@@ -3,7 +3,7 @@ Rework Namespace CSS
 
 A simple namespacing plugin for Rework.
 
-Allows for CSS to be namespaced by selector, and with class prefixes. 
+Allows for CSS to be namespaced by selector, and with class prefixes.
 
 
 ## Options
@@ -25,9 +25,10 @@ Pass in an options object to configure the plugin. Possible options:
 
 ## Example
 
-Note: Rework is fairly old now so the following may no longer work.
+Note: `grunt-rework` is fairly old now so the following may no longer work.
+Have only tested with `0.0.6`, such as from https://github.com/geordiemhall/grunt-rework
 
-Grunt snippet to show the general idea:
+Grunt snippet (untested, may not actually work these days):
 ```js
 var reworkNamespace = require('rework-namespace-css')
 grunt.initConfig({
@@ -47,7 +48,7 @@ grunt.initConfig({
 ```
 
 
-Gulp snippet to show the general idea (untested, may not work):
+Gulp snippet (untested, may not actually work these days):
 ```js
 var rework = require('gulp-rework')
 rework.namespace = require('rework-namespace-css')
