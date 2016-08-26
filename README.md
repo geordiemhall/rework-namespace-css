@@ -20,7 +20,7 @@ Pass in an options object to configure the plugin. Possible options:
 
 `namespaceBody`: whether `body` should be converted to `.body`. Useful if complete namespacing is required. Defaults to `true`
 
-`ignoreUnderscored`: whether selectors that begin with an underscore should have the underscore removed and not be namespaced. Defaults to `true`. Useful for selectors that need to break out of namespacing. Eg. `._reset {}` won't get transformed into `.namespace ._reset {}`, but as .`reset{}` instead
+`ignoreUnderscored`: whether selectors that begin with an underscore should have the underscore removed and not be namespaced. Defaults to `true`. Useful for selectors that need to break out of namespacing. Eg. `._reset {}` won't get transformed into `.namespace ._reset {}`, but as .`reset {}` instead
 
 
 ## Example
