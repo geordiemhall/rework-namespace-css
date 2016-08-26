@@ -1,6 +1,6 @@
 {
   "name": "rework-namespace-css",
-  "version": "0.1.4",
+  "version": "0.1.5",
   "description": "Plugin for rework that namespaces CSS with selectors and class prefixes.",
   "dependencies": {
     "rework-walk": "~1.0.0"
