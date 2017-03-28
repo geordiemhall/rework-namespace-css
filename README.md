@@ -5,6 +5,9 @@ Namespacing plugin for Rework.
 
 Allows for CSS to be namespaced by selector, and with class prefixes.
 
+## Install
+
+`npm i rework-namespace-css-multiple`
 
 ## Options
 
