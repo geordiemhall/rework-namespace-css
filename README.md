@@ -26,6 +26,7 @@ Pass in an options object to configure the plugin. Possible options:
 
 The following gulp snippet
 
+```javascript
     var rework = require('rework')
     rework.namespace = require('rework-namespace-css')
     
@@ -37,9 +38,11 @@ The following gulp snippet
           class: 'gmh-' 
         })))
         .pipe(gulp.dest('dist/styles'))
+```
 
 Will turn
 
+```css
     html {
         background: red;
     }    
@@ -55,9 +58,11 @@ Will turn
     a.button {
         border-color: red;
     }
+```
 
 Into
 
+```css
     .html.gmh,
     .html.fancybox {
         background: red;
@@ -77,4 +82,4 @@ Into
     .fancybox a.gmh-button {
         border-color: red;
     }
-
+```
